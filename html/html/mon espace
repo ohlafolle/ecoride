@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Espace - ÉcoRide</title>
+  <link rel="stylesheet" href="../../main.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body>
+
+   <header>
+      <img src="https://www.lignesplus-m.fr/wp-content/uploads/2023/12/covid_de_travail_ecov.webp" alt="Logo ÉcoRide" style="width: 200px; height: auto;">
+    <h1>Bienvenue sur votre site de covoiturage ÉcoRide</h1>
+    <p>Pour une planète plus verte</p>
+  </header>
+
+  <nav class="w-full bg-gray-800 text-white p-4 flex justify-around">
+    <a href="accueil" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+    </a>
+    <a href="covoiturages" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-car"></i>
+        <span>Covoiturages</span>
+    </a>
+    <a href="connexion" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Connexion</span>
+    </a>
+    <a href="contact" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+  </nav>
+
+  <main>
+
+    <div class="presentation">
+      <h1>Mon Espace</h1>
+      <p>Bienvenue dans votre <span style="font-weight: bold;">espace</span> personnel !</p>
+      <p>Vous pouvez gérer vos informations et préférences ici.</p>
+    <h2>Rôle</h2>
+    <form>
+      <label>Je suis :
+        <select id="role">
+          <option value="passager">Passager</option>
+          <option value="chauffeur">Chauffeur</option>
+          <option value="lesDeux">Passager et Chauffeur</option>
+        </select>
+      </label>
+
+      <div id="chauffeur-form" style="display:none;">
+        <h3>Informations véhicule</h3>
+
+        <div class="vehicle-block">
+          <label>Plaque d'immatriculation :
+            <input type="text">
+          </label>
+
+          <label>Date de première immatriculation :
+            <input type="date">
+          </label>
+
+          <label>Marque :
+            <input type="text">
+          </label>
+
+          <label>Modèle :
+            <input type="text">
+          </label>
+
+          <label>Couleur :
+            <input type="text">
+          </label>
+
+          <label>Nombre de places disponibles :
+            <input type="number" min="1" max="8">
+          </label>
+
+          <h4>Préférences</h4>
+          <label>
+            Fumeurs acceptés :
+            <select>
+              <option>Oui</option>
+              <option>Non</option>
+            </select>
+          </label>
+
+          <label>
+            Animaux acceptés :
+            <select>
+              <option>Oui</option>
+              <option>Non</option>
+            </select>
+          </label>
+          <label>
+           Autres préférences :
+            <textarea></textarea>
+          </label>
+        </div>
+      </div>
+    </form>
+  </main>
+
+   <footer>
+    <p>Contactez-nous : <a href="contact">contact@ecoride.fr</a></p>
+    <p><a href="mentions legales">Mentions légales</a></p>
+  </footer>
+  <script>
+    const roleSelect = document.getElementById("role");
+    const chauffeurSection = document.getElementById("chauffeur-form");
+
+    roleSelect.addEventListener("change", function() {
+      if (roleSelect.value === "chauffeur" || roleSelect.value === "lesDeux") {
+        chauffeurSection.style.display = "block";
+      } else {
+        chauffeurSection.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

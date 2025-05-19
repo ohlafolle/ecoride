@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f2e6;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .presentation {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .presentation img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .search-section {
+      text-align: center;
+      margin: 30px;
+    }
+
+    .search-section input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      padding:  20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #bbdefb;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body>
+ <header>
+      <img src="https://www.lignesplus-m.fr/wp-content/uploads/2023/12/covid_de_travail_ecov.webp" alt="Logo ÉcoRide" style="width: 200px; height: auto;">
+    <h1>Bienvenue sur votre site de covoiturage ÉcoRide</h1>
+    <p>Pour une planète plus verte</p>
+  </header>
+
+   <nav class="w-full bg-gray-800 text-white p-4 flex justify-around">
+    <a href="accueil" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+    </a>
+    <a href="covoiturages" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-car"></i>
+        <span>Covoiturages</span>
+    </a>
+    <a href="connexion" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Connexion</span>
+    </a>
+    <a href="contact" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+  </nav>
+  <div class="presentation">
+    <h2>Inscription</h2>
+    <p>Créez votre compte pour profiter de nos services de covoiturage.</p>
+ 
+    <main>
+    <form id="register-form">
+      <label>Pseudo :
+        <input type="text" id="pseudo" required>
+      </label>
+
+      <label>Adresse mail :
+        <input type="email" id="email" required>
+      </label>
+
+      <label>Mot de passe :
+        <input type="password" id="password" required>
+      </label>
+
+      <a href="mon espace">Créer mon compte </a>
+      <p class="error" id="error-msg"></p>
+    </form>
+  </main>
+
+   <footer>
+    <p>Contactez-nous : <a href="contact">contact@ecoride.fr</a></p>
+    <p><a href="mentions legales">Mentions légales</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const pwd = document.getElementById("password").value;
+      const error = document.getElementById("error-msg");
+
+      const isSecure = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/.test(pwd);
+
+      if (!isSecure) {
+        error.textContent = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial.";
+        return;
+      }
+
+      // Simuler l'inscription et l'attribution de 20 crédits
+      alert("Compte créé avec succès ! Vous avez reçu 20 crédits.");
+      window.location.href = "espace.html";
+    });
+  </script>
+</body>
+</html>

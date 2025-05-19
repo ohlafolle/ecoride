@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉcoRide - Accueil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f2e6;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .presentation {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .images-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .images-container img {
+    height: 120px; 
+    border-radius: 30px;
+  }
+
+    .search-section {
+      text-align: center;
+      margin: 30px;
+    }
+
+    .search-section input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #bbdefb;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body>
+
+  <header>
+      <img src="https://www.lignesplus-m.fr/wp-content/uploads/2023/12/covid_de_travail_ecov.webp" alt="Logo ÉcoRide" style="width: 200px; height: auto;">
+    <h1>Bienvenue sur votre site de covoiturage ÉcoRide</h1>
+    <p>Pour une planète plus verte</p>
+  </header>
+
+  <nav class="w-full bg-gray-800 text-white p-4 flex justify-around">
+    <a href="accueil" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+    </a>
+    <a href="covoiturages" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-car"></i>
+        <span>Covoiturages</span>
+    </a>
+    <a href="connexion" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Connexion</span>
+    </a>
+    <a href="contact" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+  </nav>
+<body>
+
+  <div class="presentation">
+    <h1>Rechercher un covoiturage</h1>
+    </div>
+
+
+  <main>
+    <section class="form-covoiturage">
+      <form id="search-form">
+        <label>Ville de départ :<br>
+          <input type="text" id="depart" required>
+        </label><br><br>
+
+        <label>Ville d’arrivée :<br>
+          <input type="text" id="arrivee" required>
+        </label><br><br>
+
+        <label>Date de voyage :<br>
+          <input type="date" id="date" required>
+        </label><br><br>
+
+        <button type="submit">Rechercher</button>
+      </form>
+    </section>
+
+    <div id="results">
+
+<section id="filters" style="display:none; max-width: 600px; margin: auto; margin-top: 20px;">
+    <h3>Filtres</h3>
+    <form id="filter-form">
+      <label>
+        <input type="checkbox" id="filtre-eco"> Voyage écologique uniquement
+      </label><br><br>
+  
+      <label>Prix max (€) :
+        <input type="number" id="filtre-prix" min="0">
+      </label><br><br>
+  
+      <label>Durée max (minutes) :
+        <input type="number" id="filtre-duree" min="1">
+      </label><br><br>
+  
+      <label>Note minimale :
+        <input type="number" id="filtre-note" min="1" max="5" step="0.1">
+      </label><br><br>
+  
+      <button type="submit">Appliquer les filtres</button>
+    </form>
+  </section>
+  
+    </div>
+  </main>
+
+  <footer>
+    <p>Contactez-nous : <a href="mailto:contact@ecoride.fr">contact@ecoride.fr</a></p>
+    <p><a href="#">Mentions légales</a></p>
+  </footer>
+
+  <script>
+    const sampleRides = [
+      {
+        pseudo: "EcoJean",
+        photo: "https://via.placeholder.com/60",
+        note: 4.8,
+        places: 2,
+        prix: "5 €",
+        date: "2025-05-10",
+        heureDep: "08:00",
+        heureArr: "10:00",
+        eco: true
+      },
+      {
+        pseudo: "MarieNature",
+        photo: "https://via.placeholder.com/60",
+        note: 5.0,
+        places: 0,
+        prix: "6 €",
+        date: "2025-05-10",
+        heureDep: "09:00",
+        heureArr: "11:00",
+        eco: true
+      },
+      {
+        pseudo: "Max",
+        photo: "https://via.placeholder.com/60",
+        note: 4.2,
+        places: 1,
+        prix: "7 €",
+        date: "2025-05-11",
+        heureDep: "14:00",
+        heureArr: "16:30",
+        eco: false
+      }
+    ];
+
+    document.getElementById("search-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const depart = document.getElementById("depart").value.toLowerCase();
+      const arrivee = document.getElementById("arrivee").value.toLowerCase();
+      const date = document.getElementById("date").value;
+
+      const container = document.getElementById("results");
+      container.innerHTML = "";
+
+      const results = sampleRides.filter(r => r.places > 0 && r.date === date);
+
+      if (results.length > 0) {
+        results.forEach(r => {
+          const div = document.createElement("div");
+          div.className = "result" + (r.eco ? " eco" : "");
+          div.innerHTML = `
+            <div class="driver">
+              <img src="${r.photo}" alt="Photo de ${r.pseudo}">
+              <div><strong>${r.pseudo}</strong><br>Note : ${r.note} / 5</div>
+            </div>
+            <p><strong>Places restantes :</strong> ${r.places}</p>
+            <p><strong>Prix :</strong> ${r.prix}</p>
+            <p><strong>Départ :</strong> ${r.heureDep} - <strong>Arrivée :</strong> ${r.heureArr}</p>
+            <p><strong>Voyage écologique :</strong> ${r.eco ? "Oui" : "Non"}</p>
+            <button>Détail</button>
+          `;
+          container.appendChild(div);
+        });
+      } else {
+        // Suggest closest date
+        const closest = sampleRides.find(r => r.places > 0);
+        if (closest) {
+          container.innerHTML = `
+            <div class="no-result">
+              Aucun trajet trouvé à cette date.<br><br>
+              Prochaine proposition : ${closest.date}<br><br>
+              <button onclick="document.getElementById('date').value = '${closest.date}'">Voir les trajets disponibles</button>
+            </div>
+          `;
+        } else {
+          container.innerHTML = `<div class="no-result">Aucun trajet disponible actuellement.</div>`;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

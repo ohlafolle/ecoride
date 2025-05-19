@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉcoRide - Accueil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f2e6;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .presentation {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .presentation img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .appropos {
+      padding: 30px;
+    }
+
+    .search-section {
+      text-align: center;
+      margin: 30px;
+    }
+
+    .search-section input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #bbdefb;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body>
+
+   <header>
+      <img src="https://www.lignesplus-m.fr/wp-content/uploads/2023/12/covid_de_travail_ecov.webp" alt="Logo ÉcoRide" style="width: 200px; height: auto;">
+    <h1>Bienvenue sur votre site de covoiturage ÉcoRide</h1>
+    <p>Pour une planète plus verte</p>
+  </header>
+  <nav class="w-full bg-gray-800 text-white p-4 flex justify-around">
+    <a href="accueil" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+    </a>
+    <a href="covoiturages" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-car"></i>
+        <span>Covoiturages</span>
+    </a>
+    <a href="connexion" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Connexion</span>
+    </a>
+    <a href="contact" class="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded-lg">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+  </nav>
+
+    <div class="presentation">
+        <h1>Mentions légales</h1>
+    </div>
+    <div class="appropos">
+       
+        
+        <p>ÉcoRide est une entreprise de covoiturage engagée dans la protection de l'environnement et à comme objectif la réduction de l'empreinte carbone.</p>
+        <p>Nous nous engageons à respecter la vie privée de nos utilisateurs et à protéger leurs données personnelles.</p>
+        <p>Pour toute question ou demande d'information, veuillez nous contacter à l'adresse suivante :<p>Adresse : 123 Rue de l'Écologie, 75000 Paris, France</p>
+        <p>Téléphone : +33 1 23 45 67 89</p>
+        <p>Email : contact@ecoride.fr</p>
+        <p>Numéro de SIRET : 123 456 789 00012</p>
+
+    </div>
+    
+    <footer>
+    <p>Contactez-nous : <a href="mailto:contact@ecoride.fr">contact@ecoride.fr</a></p>
+    <p><a href="mentions legales">Mentions légales</a></p>
+  </footer>
